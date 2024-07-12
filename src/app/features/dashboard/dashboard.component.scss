@@ -1,22 +1,85 @@
+// Variables de colores
+$color-naranja: #FF6F00;
+$color-negro: #212121;
+$color-gris-oscuro: #424242;
+$color-gris-claro: #BDBDBD;
+$color-blanco: #FFFFFF;
+
+.example-toolbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  background-color: $color-naranja;
+  color: $color-blanco;
+}
+
 .example-container {
+  width: 100%;
+  height: 100vh;
+  padding-top: 64px;
+  box-sizing: border-box;
+  background-color: $color-gris-claro;
+}
+
+.example-sidenav-content {
+
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-gris-oscuro;
+  color: $color-naranja;
+}
+
+.example-sidenav {
+  padding: 20px;
+  margin-top: 50px;
+  background-color: $color-negro;
+  color: $color-blanco;
+
+  mat-nav-list {
     width: 100%;
-    height: 100vh;
-  }
-  
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .example-sidenav {
-    padding: 20px;
   }
 
-  .example-icon {
-    padding: 0 14px;
+  mat-list-item {
+
+    width: 100%;
+    color: $color-blanco !important;
+    margin-bottom: 10px;
   }
-  .example-spacer {
-    flex: 1 1 auto;
+}
+
+.menu-button {
+  width: 100%;
+  color: $color-blanco !important;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+ 
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
+}
+
+.example-icon {
+  margin: 0 10px;
+  background-color: $color-naranja;
+  color: $color-blanco;
+
+  mat-icon {
+    font-size: 20px;
+  }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.login-icon {
+  background-color: $color-naranja;
+  color: $color-blanco;
+}
