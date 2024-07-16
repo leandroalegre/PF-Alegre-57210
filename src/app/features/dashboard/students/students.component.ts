@@ -42,7 +42,7 @@ export class StudentsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openDialog(): void {
+  newStudent(): void {
     const dialogRef = this.matDialog.open(StudentsDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
@@ -54,7 +54,7 @@ export class StudentsComponent implements OnInit {
   }
 
   editStudent(student: Student): void {
-    // Lógica para editar estudiante
+    // Editar estudiante
   }
 
   deleteStudent(student: Student): void {

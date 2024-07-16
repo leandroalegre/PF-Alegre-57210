@@ -17,25 +17,26 @@ $color-blanco: #FFFFFF;
 }
 
 .example-container {
+  padding: 60px;
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
   background-color: $color-gris-claro;
 }
 
-.example-sidenav-content {
-  height: 100%;
-  width: 100%;
-  justify-content: flex-start;
-  padding: 50px; 
-  //background-color: $color-gris-oscuro;
+ .example-sidenav-content {
+  //height: 100%;
+  //width: 100%;
+  //justify-content: flex-start;
+  adding: 50px; 
+  background-color: $color-gris-oscuro;
   color: $color-naranja;
-}
+ }
 
 .example-sidenav {
   padding: 20px;
   margin-top: 50px;
-  background-color: $color-negro;
+  background-color: $color-gris-claro;
   color: $color-blanco;
 
   mat-nav-list {
