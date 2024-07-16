@@ -1,0 +1,37 @@
+@import '@angular/material/theming';
+
+$color-naranja: #FF6F00;
+$color-negro: #212121;
+$color-gris-oscuro: #424242;
+$color-gris-claro: #BDBDBD;
+$color-blanco: #FFFFFF;
+
+.students-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $color-gris-claro;
+  padding: 20px;
+
+  table {
+    width: 80%;
+    max-width: 1200px;
+    background-color: $color-blanco;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    th {
+      background-color: $color-naranja;
+      color: $color-blanco;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    td {
+      text-align: center;
+      font-size: 14px;
+      color: $color-negro;
+    }
+  }
+}

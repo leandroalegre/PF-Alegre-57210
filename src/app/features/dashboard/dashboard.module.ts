@@ -12,11 +12,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table'; 
 import { CoursesComponent} from './courses/courses.component';
+import { CoursesModule } from './courses/courses.module';
+import { StudentsModule } from './students/students.module';
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    CoursesComponent,
   ],
   exports: [DashboardComponent],
   imports: [
@@ -31,6 +32,8 @@ import { CoursesComponent} from './courses/courses.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatTableModule,
+    CoursesModule,
+    StudentsModule,
   ]
 })
 export class DashboardModule { }

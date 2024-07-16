@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
 import { Course } from './models/index';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -45,4 +46,5 @@ export class CoursesComponent {
       endDate: new Date("2025-01-10")
     }
   ];
+
 }

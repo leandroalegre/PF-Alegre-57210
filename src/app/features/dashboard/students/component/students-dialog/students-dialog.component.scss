@@ -1,0 +1,26 @@
+// Variables de colores
+$color-naranja: #FF6F00;
+$color-negro: #212121;
+$color-gris-oscuro: #424242;
+$color-gris-claro: #BDBDBD;
+$color-blanco: #FFFFFF;
+
+.students-dialog-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: $color-blanco;
+  border-radius: 8px;
+  h2 {
+    color: $color-naranja;
+    text-align: center;
+  }
+  .full-width {
+    width: 100%;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}

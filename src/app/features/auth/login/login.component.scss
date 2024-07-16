@@ -1,0 +1,82 @@
+// Variables de colores
+$color-naranja: #FF6F00;
+$color-negro: #212121;
+$color-gris-oscuro: #424242;
+$color-gris-claro: #BDBDBD;
+$color-blanco: #FFFFFF;
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $color-gris-claro;
+}
+
+.login-card {
+  width: 400px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  .logo {
+    width: 100px;
+    margin: 20px auto;
+  }
+  .mat-card-header {
+    display: flex;
+    justify-content: center;
+    background-color: $color-naranja;
+    color: $color-blanco;
+    border-radius: 5px 5px 0 0;
+    .header-content {
+      width: 100%;
+      text-align: center;
+      h1 {
+        font-size: 24px;
+        margin: 0;
+      }
+    }
+  }
+  .mat-card-content {
+    padding: 20px;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .mat-form-field {
+        width: 100%;
+        margin-bottom: 20px;
+        .mat-label {
+          font-size: 14px;
+        }
+        .mat-icon {
+          color: $color-gris-oscuro;
+        }
+      }
+      .rounded-input .mat-input-element {
+        border-radius: 25px;
+      }
+      .rounded-input .mat-form-field-underline::before,
+      .rounded-input .mat-form-field-underline::after {
+        border: none;
+      }
+    }
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    button {
+      background-color: $color-naranja;
+      color: $color-blanco;
+      border-radius: 25px;
+      .mat-icon {
+        font-size: 20px;
+        margin-right: 8px;
+      }
+      span {
+        margin-left: 8px;
+      }
+    }
+  }
+}

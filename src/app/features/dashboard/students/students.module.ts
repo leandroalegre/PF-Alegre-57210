@@ -1,14 +1,37 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
-import { StudentsRoutingModule } from './students-routing.module';
-
+import { StudentsComponent } from './students.component';
+import { StudentsDialogComponent } from './component/students-dialog/students-dialog.component';
+import { FullNamePipe } from './pipes/full-name.pipe';
+import { TitleSizeDirective } from './directives/title-size.directive';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    StudentsComponent,
+    StudentsDialogComponent,
+    FullNamePipe,
+    TitleSizeDirective
+  ],
   imports: [
     CommonModule,
-    StudentsRoutingModule
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
+  exports: [
+    StudentsComponent
   ]
 })
 export class StudentsModule { }
