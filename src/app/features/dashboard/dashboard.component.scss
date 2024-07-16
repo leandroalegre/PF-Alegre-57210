@@ -16,44 +16,43 @@ $color-blanco: #FFFFFF;
   color: $color-blanco;
 }
 
-.example-container {
-  padding: 60px;
-  width: 100%;
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: $color-gris-claro;
-}
+// .example-container {
+//  // padding: 60px;
+//   //width: 100%;
+//   //height: 100vh;
+//   //box-sizing: border-box;
+//   //background-color: $color-blanco;
+// }
 
  .example-sidenav-content {
-  //height: 100%;
-  //width: 100%;
-  //justify-content: flex-start;
-  adding: 50px; 
-  background-color: $color-gris-oscuro;
+  margin-top: 100px;
+  height: 100vh;
+  width: 100%;
+  background-color: $color-blanco;
   color: $color-naranja;
  }
 
-.example-sidenav {
-  padding: 20px;
-  margin-top: 50px;
-  background-color: $color-gris-claro;
-  color: $color-blanco;
+ .example-sidenav {
+  padding-top:80px;
+//   margin-top: 50px;
+//   background-color: $color-blanco;
+//   color: $color-negro;
 
-  mat-nav-list {
-    width: 100%;
-  }
+//   mat-nav-list {
+//     width: 100%;
+//   }
 
-  mat-list-item {
+//   mat-list-item {
 
-    width: 100%;
-    color: $color-blanco !important;
-    margin-bottom: 10px;
-  }
-}
+//     width: 100%;
+//     color: $color-negro !important;
+//     margin-bottom: 10px;
+//   }
+ }
 
 .menu-button {
   width: 100%;
-  color: $color-blanco !important;
+  color: $color-negro !important;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
