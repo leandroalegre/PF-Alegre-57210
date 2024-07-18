@@ -35,17 +35,17 @@ const routes: Routes = [
       //   component: CourseDetailComponent,
       // },
       // {
-      //   path: 'enrollments',
-      //   component: EnrollmentsComponent,
+      //   path: 'teachers',
+      //   component: TeachersComponent,
       // },
       {
-        path: '**', // Cualquier ruta que no coincida con las anteriores (basicmanete es un default)
+        path: '**', 
         redirectTo: '/dashboard/home',
       },
     ],
   },
   {
-    path: '**', // Cualquier ruta que no coincida con las anteriores (basicmanete es un default)
+    path: '**', 
     redirectTo: '/auth',
   },
 ];
