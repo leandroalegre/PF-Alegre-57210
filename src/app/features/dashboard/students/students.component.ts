@@ -54,7 +54,19 @@ export class StudentsComponent implements OnInit {
   }
 
   editStudent(student: Student): void {
-    // Editar estudiante
+    const dialogRef = this.matDialog.open(StudentsDialogComponent, {
+      data: student
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        const index = this.students.findIndex(s => s.id === result.id);
+        if (index !== -1) {
+          this.students[index] = result;
+          this.dataSource.data = this.students;
+        }
+      }
+    });
   }
 
   deleteStudent(student: Student): void {

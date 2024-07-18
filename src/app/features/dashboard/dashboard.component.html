@@ -4,7 +4,7 @@
     </button>
     <span class="example-spacer"></span>
     <button mat-mini-fab class="example-icon login-icon" aria-label="mat-list-item icon">
-        <mat-icon>login</mat-icon>
+        <mat-icon routerLink="auth">login</mat-icon>
     </button>
 </mat-toolbar>
 
@@ -12,27 +12,34 @@
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <mat-nav-list>
             <mat-list-item 
-                routerLink="inicio"
+                routerLink="home"
                 routerLinkActive
-                #InicioLink="routerLinkActive"
-                [activated]="StudentLink.isActive">
-
-            <button mat-button class="menu-button"      aria-label="Alumnos">Inicio</button>
+                #HomeLink="routerLinkActive"
+                [activated]="HomeLink.isActive">
+                <button mat-button class="menu-button"      aria-label="Inicio">Inicio</button>
             </mat-list-item>
-            <mat-list-item 
-            routerLink="students"
-            routerLinkActive
-            #StudentLink="routerLinkActive"
-            [activated]="StudentLink.isActive">
 
-        <button mat-button class="menu-button"      aria-label="Alumnos">Alumnos</button>
-        </mat-list-item>
+            <mat-list-item 
+                routerLink="students"
+                routerLinkActive
+                #StudentLink="routerLinkActive"
+                [activated]="StudentLink.isActive">
+                <button mat-button class="menu-button"      aria-label="Alumnos">Alumnos</button>
+            </mat-list-item>
+            
             <mat-list-item>            
                 <button mat-button class="menu-button" aria-label="Profesores">Profesores</button>
             </mat-list-item>
-            <mat-list-item router-link="courses"  >
+            
+            <mat-list-item 
+            router-link="courses"
+            routerLinkActive
+            #CoursesLink="routerLinkActive"
+            [activated]="CoursesLink.isActive"
+            >
                 <button mat-button class="menu-button" aria-label="Cursos">Cursos</button>
             </mat-list-item>
+            
             <mat-list-item>
                 <button mat-button class="menu-button" aria-label="Administracion">Administración</button>
             </mat-list-item>

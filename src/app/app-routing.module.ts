@@ -6,63 +6,48 @@ import { CoursesComponent } from './features/dashboard/courses/courses.component
 import { StudentsComponent } from './features/dashboard/students/students.component';
 import { TeachersComponent } from './features/dashboard/teachers/teachers.component';
 import { CoursesDetailsComponent } from './features/dashboard/courses/pages/courses-details/courses-details.component';
+import { HomeComponent } from './features/dashboard/home/home.component';
 
 
 const routes: Routes = [
-{
-  path: 'auth',
-      component:  LoginComponent
-},    
-{
-  path: 'inicio',
-      component: CoursesComponent
-
-},
-{
-  path: 'dashboard',
-  component:  DashboardComponent,
-    children:[
+  {
+    path: 'auth',
+    component: LoginComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path: 'students',
+        component: StudentsComponent,
+      },
       {
         path: 'courses',
-        component: CoursesComponent
-  
+        component: CoursesComponent,
       },
-
-    {
-      path: 'courses:id',
-      component: CoursesDetailsComponent
-
-    },
-    {
-      path: 'students',
-      component: StudentsComponent
-
-    },
-    {
-      path: 'teachers',
-      component: TeachersComponent
-
-    },
-    // {
-    //   path: '**',
-    //   redirectTo: '/auth'
-
-    // },
-    
       // {
-    //   path: 'administrations',
-    //   component: AdminstrationsComponent
-
-    // }    
-
-    // {
-    //   path: '**',
-    //   redirectTo: '/auth'
-
-    // },
-
-  ]
-}
+      //   path: 'courses/:id',
+      //   component: CourseDetailComponent,
+      // },
+      // {
+      //   path: 'enrollments',
+      //   component: EnrollmentsComponent,
+      // },
+      {
+        path: '**', // Cualquier ruta que no coincida con las anteriores (basicmanete es un default)
+        redirectTo: '/dashboard/home',
+      },
+    ],
+  },
+  {
+    path: '**', // Cualquier ruta que no coincida con las anteriores (basicmanete es un default)
+    redirectTo: '/auth',
+  },
 ];
 
 @NgModule({
