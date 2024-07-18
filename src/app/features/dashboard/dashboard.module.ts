@@ -14,10 +14,13 @@ import {MatTableModule} from '@angular/material/table';
 import { CoursesComponent} from './courses/courses.component';
 import { CoursesModule } from './courses/courses.module';
 import { StudentsModule } from './students/students.module';
+import { TeachersComponent } from './teachers/teachers.component';
+import { TeachersModule } from './teachers/teachers.module';
 
 @NgModule({
   declarations: [
     DashboardComponent,
+
   ],
   exports: [DashboardComponent],
   imports: [
@@ -34,6 +37,8 @@ import { StudentsModule } from './students/students.module';
     MatTableModule,
     CoursesModule,
     StudentsModule,
+    TeachersModule
+
   ]
 })
 export class DashboardModule { }

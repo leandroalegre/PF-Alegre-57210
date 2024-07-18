@@ -12,10 +12,11 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CoursesDetailsComponent } from './pages/courses-details/courses-details.component';
 
 
 @NgModule({
-  declarations: [CoursesComponent],
+  declarations: [CoursesComponent, CoursesDetailsComponent],
   exports:[CoursesComponent],
   imports: [
     CommonModule,
