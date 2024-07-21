@@ -34,10 +34,10 @@ const routes: Routes = [
       //   path: 'courses/:id',
       //   component: CourseDetailComponent,
       // },
-      // {
-      //   path: 'teachers',
-      //   component: TeachersComponent,
-      // },
+      {
+        path: 'teachers',
+        component: TeachersComponent,
+      },
       {
         path: '**', 
         redirectTo: '/dashboard/home',

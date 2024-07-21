@@ -27,17 +27,20 @@
                 <button mat-button class="menu-button"      aria-label="Alumnos">Alumnos</button>
             </mat-list-item>
             
-            <mat-list-item>            
-                <button mat-button class="menu-button" aria-label="Profesores">Profesores</button>
+            <mat-list-item 
+                routerLink="teachers"
+                routerLinkActive
+                #teachersLink="routerLinkActive"
+                [activated]="teachersLink.isActive">
+                <button mat-button class="menu-button"      aria-label="Inicio">Profesores</button>
             </mat-list-item>
             
             <mat-list-item 
-            router-link="courses"
-            routerLinkActive
-            #CoursesLink="routerLinkActive"
-            [activated]="CoursesLink.isActive"
-            >
-                <button mat-button class="menu-button" aria-label="Cursos">Cursos</button>
+                routerLink="courses"
+                routerLinkActive
+                #coursesLink="routerLinkActive"
+                [activated]="coursesLink.isActive">
+                <button mat-button class="menu-button"      aria-label="Cursos">Cursos</button>
             </mat-list-item>
             
             <mat-list-item>

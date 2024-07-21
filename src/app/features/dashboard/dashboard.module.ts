@@ -14,7 +14,6 @@ import {MatTableModule} from '@angular/material/table';
 import { CoursesComponent} from './courses/courses.component';
 import { CoursesModule } from './courses/courses.module';
 import { StudentsModule } from './students/students.module';
-import { TeachersComponent } from './teachers/teachers.component';
 import { TeachersModule } from './teachers/teachers.module';
 
 @NgModule({

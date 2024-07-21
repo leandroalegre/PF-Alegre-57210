@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
-import { Course } from './models/index';
+import { Course } from '../../../models/index';
 import { MatDialog } from '@angular/material/dialog';
 
 
@@ -47,4 +47,17 @@ export class CoursesComponent {
     }
   ];
 
+  // ngOnInit(): void {}
+  
+  // newStudent(): void {
+  //   const dialogRef = this.matDialog.open(StudentsDialogComponent);
+    
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     if (result) {
+  //       this.students.push(result);
+  //       this.dataSource.data = this.students;
+  //     }
+  //   });
+  // }
+  
 }

@@ -1,4 +1,9 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="buttonAdd">
+  <span>Agregar Estudiante</span>
+  <button mat-mini-fab color="primary" >
+<mat-icon>add</mat-icon>
+</button>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
