@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './features/dashboard/dashboard.module';
 import { AuthModule } from './features/auth/auth.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,8 +18,6 @@ import { AuthModule } from './features/auth/auth.module';
     DashboardModule,
     BrowserAnimationsModule,
     AuthModule,
-    
-
 
   ],
   providers: [],
