@@ -1,0 +1,19 @@
+// Variables de colores
+$color-naranja: #FF6F00;
+$color-blanco: #FFFFFF;
+
+:host {
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+
+    button {
+      margin-left: 10px;
+    }
+  }
+}

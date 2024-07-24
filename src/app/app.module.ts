@@ -19,6 +19,7 @@ import { AuthModule } from './features/auth/auth.module';
     BrowserAnimationsModule,
     AuthModule,
 
+
   ],
   providers: [],
   bootstrap: [AppComponent]

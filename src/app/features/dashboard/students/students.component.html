@@ -1,17 +1,16 @@
+<div class="students-container">
   <div class="buttonAdd">
-        <span>Agregar Estudiante</span>
-        <button mat-mini-fab color="primary" (click)="newStudent()">
+    <div class="title">Estudiantes</div>
+    <span>Agregar Estudiante</span>
+    <button mat-mini-fab color="primary" (click)="newStudent()">
       <mat-icon>add</mat-icon>
     </button>
-
   </div>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width-table">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width-table">
     <!-- Columnas de la tabla -->
-
-
     <ng-container matColumnDef="fullName">
       <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>
-      <td mat-cell *matCellDef="let element"> {{element | fullName}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
     </ng-container>
 
     <ng-container matColumnDef="age">
@@ -21,11 +20,9 @@
 
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
-      <td mat-cell *matCellDef="let element" class="action-buttons">    
-
+      <td mat-cell *matCellDef="let element" class="action-buttons">
         <div class="button-group">
-
-          <button mat-mini-fab color="primary" (click)="editStudent(element)">
+          <button mat-mini-fab class="edit-button" (click)="editStudent(element)">
             <mat-icon>edit</mat-icon>
           </button>
           <button mat-mini-fab color="warn" (click)="deleteStudent(element)">
@@ -39,3 +36,4 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>
