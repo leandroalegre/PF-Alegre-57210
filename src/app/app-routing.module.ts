@@ -7,16 +7,22 @@ import { StudentsComponent } from './features/dashboard/students/students.compon
 import { TeachersComponent } from './features/dashboard/teachers/teachers.component';
 import { CoursesDetailsComponent } from './features/dashboard/courses/pages/courses-details/courses-details.component';
 import { HomeComponent } from './features/dashboard/home/home.component';
+import { authGuard } from './core/guards/auth.guard';
 
 
 const routes: Routes = [
   {
     path: 'auth',
-    component: LoginComponent,
+    loadChildren: () =>
+      import('./features/auth/auth.module').then(
+        (referenciaAlArchivo) => referenciaAlArchivo.AuthModule
+      ),
+    //component: LoginComponent,
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: 'home',
@@ -39,13 +45,13 @@ const routes: Routes = [
         component: TeachersComponent,
       },
       {
-        path: '**', 
+        path: '**',
         redirectTo: '/dashboard/home',
       },
     ],
   },
   {
-    path: '**', 
+    path: '**',
     redirectTo: '/auth',
   },
 ];
