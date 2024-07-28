@@ -56,8 +56,8 @@ $color-blanco: #FFFFFF;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
- 
-  
+
+
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
@@ -80,4 +80,8 @@ $color-blanco: #FFFFFF;
 .login-icon {
   background-color: $color-naranja;
   color: $color-blanco;
+}
+.active .menu-button {
+  background-color: $color-naranja;
+  font-weight: bold;
 }

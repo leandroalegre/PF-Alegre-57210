@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
+import { MenuService } from '../../shared/menu.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  showFiller = false;
+  @ViewChild('drawer') drawer!: MatDrawer;
+
+  constructor(private menuService: MenuService) {}
+
+  ngOnInit() {
+    this.menuService.toggleSidebar$.subscribe(() => {
+      this.drawer.toggle();
+    });
+  }
 }

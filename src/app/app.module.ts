@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './features/dashboard/dashboard.module';
 import { AuthModule } from './features/auth/auth.module';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { AuthModule } from './features/auth/auth.module';
     DashboardModule,
     BrowserAnimationsModule,
     AuthModule,
+
 
 
   ],

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuService } from '../../../shared/menu.service'; // Asegúrate de tener la ruta correcta
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  constructor(private menuService: MenuService) {}
 
+  openMenu() {
+    this.menuService.toggleSidebar();
+  }
 }

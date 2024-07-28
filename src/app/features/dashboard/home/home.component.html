@@ -1,1 +1,24 @@
-<p>home works!</p>
+<mat-card class="welcome-card">
+  <mat-card-header>
+    <mat-card-title>Bienvenido</mat-card-title>
+    <mat-card-subtitle>Nos alegra tenerte aquí</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Aquí puedes encontrar información relevante y funcionalidades importantes.
+    </p>
+    <p>
+      <strong>Descripción de los menús laterales:</strong>
+    </p>
+    <ul>
+      <li><strong>Inicio</strong>: Accede a la página principal donde encontrarás información general y enlaces importantes.</li>
+      <li><strong>Alumnos</strong>: Gestiona y consulta información de los estudiantes.</li>
+      <li><strong>Profesores</strong>: Gestiona y consulta información de los profesores.</li>
+      <li><strong>Cursos</strong>: Consulta y administra los cursos disponibles.</li>
+      <li><strong>Administración</strong>: Accede a las funciones de administración de la aplicación.</li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="openMenu()">Comenzar</button>
+  </mat-card-actions>
+</mat-card>

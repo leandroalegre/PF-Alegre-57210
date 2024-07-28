@@ -1,60 +1,47 @@
 <mat-toolbar class="example-toolbar">
-    <button mat-mini-fab class="example-icon" aria-label="Menu icon" (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <span class="example-spacer"></span>
-    <button mat-mini-fab class="example-icon login-icon" aria-label="mat-list-item icon">
-        <mat-icon routerLink="auth">login</mat-icon>
-    </button>
+  <button mat-mini-fab class="example-icon" aria-label="Menu icon" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-mini-fab class="example-icon login-icon" routerLink="auth" aria-label="mat-list-item icon">
+    <mat-icon>login</mat-icon>
+  </button>
 </mat-toolbar>
 
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <mat-nav-list>
-            <mat-list-item 
-                routerLink="home"
-                routerLinkActive
-                #HomeLink="routerLinkActive"
-                [activated]="HomeLink.isActive">
-                <button mat-button class="menu-button"      aria-label="Inicio">Inicio</button>
-            </mat-list-item>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-nav-list>
+      <mat-list-item
+          routerLink="home"
+          routerLinkActive="active"
+          routerLinkActiveMachOptions="{ exact: true }">
+          <button mat-button class="menu-button" aria-label="Inicio">Inicio</button>
+      </mat-list-item>
 
-            <mat-list-item 
-                routerLink="students"
-                routerLinkActive
-                #StudentLink="routerLinkActive"
-                [activated]="StudentLink.isActive">
-                <button mat-button class="menu-button"      aria-label="Alumnos">Alumnos</button>
-            </mat-list-item>
-            
-            <mat-list-item 
-                routerLink="teachers"
-                routerLinkActive
-                #teachersLink="routerLinkActive"
-                [activated]="teachersLink.isActive">
-                <button mat-button class="menu-button"      aria-label="Inicio">Profesores</button>
-            </mat-list-item>
-            
-            <mat-list-item 
-                routerLink="courses"
-                routerLinkActive
-                #coursesLink="routerLinkActive"
-                [activated]="coursesLink.isActive">
-                <button mat-button class="menu-button"      aria-label="Cursos">Cursos</button>
-            </mat-list-item>
-            
-            <mat-list-item>
-                <button mat-button class="menu-button" aria-label="Administracion">Administración</button>
-            </mat-list-item>
-        </mat-nav-list>
-    </mat-drawer>
-<!--Fin de estructura nav-->
-    <div class="example-sidenav-content">
+      <mat-list-item
+          routerLink="students"
+          routerLinkActive="active">
+          <button mat-button class="menu-button" aria-label="Alumnos">Alumnos</button>
+      </mat-list-item>
 
-        <router-outlet></router-outlet>
+      <mat-list-item
+          routerLink="teachers"
+          routerLinkActive="active">
+          <button mat-button class="menu-button" aria-label="Profesores">Profesores</button>
+      </mat-list-item>
 
+      <mat-list-item
+          routerLink="courses"
+          routerLinkActive="active">
+          <button mat-button class="menu-button" aria-label="Cursos">Cursos</button>
+      </mat-list-item>
 
-        </div>
-<!--Fin de estructura container-->
-
+      <mat-list-item>
+          <button mat-button class="menu-button" aria-label="Administracion">Administración</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
 </mat-drawer-container>

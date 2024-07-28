@@ -1,11 +1,13 @@
 <div class="courses-container">
   <div class="buttonAdd">
     <div class="title">Cursos</div>
-    <button mat-raised-button color="primary" (click)="newCourse()">
-      <mat-icon>add</mat-icon> Agregar Curso
+    <span>Agregar Curso</span>
+    <button mat-mini-fab color="primary" (click)="newCourse()">
+      <mat-icon>add</mat-icon>
     </button>
   </div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width-table">
+    <!-- Columnas de la tabla -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
@@ -30,10 +32,10 @@
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
       <td mat-cell *matCellDef="let element" class="action-buttons">
         <div class="button-group">
-          <button mat-mini-fab color="primary" (click)="editCourse(element)">
+          <button mat-mini-fab class="edit-button" (click)="editCourse(element)">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-mini-fab color="warn" (click)="deleteCourse(element)">
+          <button mat-mini-fab class="delete-button" (click)="deleteCourse(element)">
             <mat-icon>delete</mat-icon>
           </button>
         </div>

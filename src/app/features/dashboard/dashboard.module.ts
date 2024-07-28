@@ -16,6 +16,7 @@ import { CoursesModule } from './courses/courses.module';
 import { StudentsModule } from './students/students.module';
 import { TeachersModule } from './teachers/teachers.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     StudentsModule,
     TeachersModule,
     SharedModule,
+    HomeModule,
 
   ]
 })
