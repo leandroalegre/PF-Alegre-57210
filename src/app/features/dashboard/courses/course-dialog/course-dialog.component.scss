@@ -1,19 +1,40 @@
 // Variables de colores
 $color-naranja: #FF6F00;
+$color-negro: #212121;
+$color-gris-oscuro: #424242;
+$color-gris-claro: #BDBDBD;
 $color-blanco: #FFFFFF;
 
-:host {
-  .mat-form-field {
-    width: 100%;
+.dialog-container {
+  padding: 20px; // Agrega espacio alrededor del contenido del formulario
+}
+
+mat-form-field {
+  margin-bottom: 16px; // Agrega espacio entre los campos del formulario
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px; // Espacio entre los botones
+}
+
+button {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+button.mat-raised-button {
+  background-color: $color-gris-oscuro;
+  color: $color-blanco;
+  &:hover {
+    background-color: $color-gris-claro;
   }
+}
 
-  .button-group {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-
-    button {
-      margin-left: 10px;
-    }
+button.mat-button {
+  color: $color-negro;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
