@@ -23,32 +23,9 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [authGuard],
-    children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
-      {
-        path: 'students',
-        component: StudentsComponent,
-      },
-      {
-        path: 'courses',
-        component: CoursesComponent,
-      },
-      // {
-      //   path: 'courses/:id',
-      //   component: CourseDetailComponent,
-      // },
-      {
-        path: 'teachers',
-        component: TeachersComponent,
-      },
-      {
-        path: '**',
-        redirectTo: '/dashboard/home',
-      },
-    ],
+    loadChildren: () => import('./features/dashboard/dashboard.module').then(
+      (m) => m.DashboardModule
+    ),
   },
   {
     path: '**',
