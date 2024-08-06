@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './features/dashboard/dashboard.module';
 import { AuthModule } from './features/auth/auth.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     DashboardModule,
     BrowserAnimationsModule,
     AuthModule,
+    StoreModule.forRoot({}, {}),
 
 
 
