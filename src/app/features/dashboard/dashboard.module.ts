@@ -35,6 +35,8 @@ import { HomeModule } from './home/home.module';
     TeachersModule,
     SharedModule,
     HomeModule,
+    MatToolbarModule,
+    MatIconModule,
 
   ]
 })
