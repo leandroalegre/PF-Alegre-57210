@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  username: string = '';
+  password: string = '';
 
+  constructor(private authService: AuthService, private router: Router) {}
+
+  login() {
+    if (this.authService.login(this.username, this.password)) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      alert('Credenciales incorrectas');
+    }
+  }
 }
