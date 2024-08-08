@@ -13,11 +13,18 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  login() {
-    if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      alert('Credenciales incorrectas');
+  async login() {
+    try {
+      const isLoggedIn = true;
+//      await this.authService.login(this.username, this.password);
+      if (isLoggedIn) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        alert('Credenciales incorrectas');
+      }
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+      alert('Error al iniciar sesión');
     }
   }
 }

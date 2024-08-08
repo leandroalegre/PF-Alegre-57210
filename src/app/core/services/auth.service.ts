@@ -12,49 +12,47 @@ import { setAuthUser, unsetAuthUser } from '../store/auth.actions';
   providedIn: 'root',
 })
 export class AuthService {
-  isLoggedIn() {
-    throw new Error('Method not implemented.');
-  }
   private VALID_TOKEN = 'lksfdjglfdkgjklfdkjgldfjisdhfjsdfsdk';
-  store: any;
 
   constructor(
     private http: HttpClient,
     private router: Router,
     private notifier: NotifierService,
-   // private store: Store<RootState>
+    private store: Store<any> // Ajusta esto según tu estado raíz
   ) {}
 
-  login(data: { email: string; password: string }) {
-    this.http
-      .get<User[]>(environment.apiUrl + '/users', {
-        params: {
-          email: data.email,
-          password: data.password,
-        },
-      })
-      .subscribe({
-        next: (response) => {
-          if (!response.length) {
-            alert('Usuario o password invalido');
-          } else {
-            const authUser = response[0];
-            localStorage.setItem('token', authUser.token);
-            this.store.dispatch(setAuthUser({ payload: authUser }));
-
-            this.router.navigate(['dashboard', 'home']);
-          }
-        },
-        error: (err) => {
-          this.notifier.sendNotification('Error al iniciar sesion');
-        },
-      });
+  login(username: string, password: string): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      this.http
+        .get<User[]>(environment.apiUrl + '/users', {
+          params: {
+            email: username,
+            password: password,
+          },
+        })
+        .subscribe({
+          next: (response) => {
+            if (!response.length) {
+              alert('Usuario o password invalido');
+              resolve(false);
+            } else {
+              const authUser = response[0];
+              localStorage.setItem('token', authUser.token);
+              this.store.dispatch(setAuthUser({ payload: authUser }));
+              resolve(true);
+            }
+          },
+          error: (err) => {
+            this.notifier.sendNotification('Error al iniciar sesion');
+            reject(err);
+          },
+        });
+    });
   }
 
   logout() {
     localStorage.removeItem('token');
     this.store.dispatch(unsetAuthUser());
-
     this.router.navigate(['auth', 'login']);
   }
 
@@ -77,20 +75,11 @@ export class AuthService {
             const authUser = response[0];
             localStorage.setItem('token', authUser.token);
             this.store.dispatch(setAuthUser({ payload: authUser }));
-
             return true;
           }
         })
       );
   }
-
-  verificarToken() {}
-
-  obtenerUsuarioAutenticado() {}
-
-  /**
-   * Ejercitacion Promesas y Observables
-   */
 
   obtenerUsuarioObservable(): Observable<any> {
     return new Observable((observer) => {
@@ -108,7 +97,6 @@ export class AuthService {
   obtenerUsuarioPromise(): Promise<any> {
     return new Promise((resolve, reject) => {
       reject('Error desconocido');
-
       setTimeout(() => {
         resolve({
           name: 'Name fake',
